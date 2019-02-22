@@ -92,7 +92,7 @@ class ExportNodeModules {
 
             const packageName = contextArray.slice(packageNameStart, packageNameEnd);
 
-            const packageJsonFile = path.join(...nodeModulesArray, ...packageName, "package.json");
+            const packageJsonFile = path.join(nodeModulesArray.join(path.sep), ...packageName, "package.json");
             let packageJson;
             try {
               packageJson = JSON.parse(fs.readFileSync(packageJsonFile, "UTF-8"));
